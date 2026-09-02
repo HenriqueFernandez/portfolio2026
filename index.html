@@ -1,0 +1,752 @@
+Perfeito, Henrique! Atualizei os nomes dos arquivos de imagem do **Editorial 02** no código HTML para utilizarem os novos arquivos enviados (`Timeline 1 01_00086400.jpg`, `Timeline 1 01_00086401.jpg` e `Timeline 1 01_00086402.jpg`).
+
+Aqui está o código HTML completo e atualizado com as novas imagens:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henrique Fernandez — Audiovisual</title>
+    <style>
+        /* =========================
+            RESET
+        ========================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+            HEADER
+        ========================== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 25px 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #aaa;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* =========================
+            HERO
+        ========================== */
+        .hero {
+            min-height: 100vh;
+            padding: 160px 5vw 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-small {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(60px, 11vw, 170px);
+            font-weight: 400;
+            line-height: 0.85;
+            letter-spacing: -7px;
+            max-width: 1200px;
+        }
+
+        .hero-description {
+            margin-top: 60px;
+            max-width: 600px;
+            font-size: 18px;
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .scroll {
+            margin-top: 100px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        /* =========================
+            SECTIONS
+        ========================== */
+        section {
+            padding: 140px 5vw;
+            border-top: 1px solid #222;
+        }
+
+        .section-header {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            margin-bottom: 80px;
+        }
+
+        .section-number {
+            font-size: 11px;
+            color: #666;
+            letter-spacing: 2px;
+        }
+
+        .section-title {
+            font-size: clamp(40px, 6vw, 90px);
+            font-weight: 400;
+            letter-spacing: -4px;
+            line-height: 0.95;
+        }
+
+        .section-intro {
+            max-width: 650px;
+            margin-left: auto;
+            margin-bottom: 70px;
+            color: #888;
+            font-size: 16px;
+        }
+
+        /* =========================
+            EXPERIENCE
+        ========================== */
+        .experience {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 60px;
+            padding: 50px 0;
+            border-top: 1px solid #222;
+        }
+
+        .experience:last-child {
+            border-bottom: 1px solid #222;
+        }
+
+        .experience-meta {
+            color: #666;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .experience-content h3 {
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .experience-content p {
+            max-width: 700px;
+            color: #999;
+            margin-bottom: 35px;
+        }
+
+        /* =========================
+            VIDEO GRID
+        ========================== */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .video-card {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        .video-preview {
+            aspect-ratio: 16 / 9;
+            background: #111;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .video-preview a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .video-preview a:hover {
+            background: #1c1c1c;
+        }
+
+        .play {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #555;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #aaa;
+            transition: all 0.3s ease;
+        }
+
+        .video-preview a:hover .play {
+            border-color: #fff;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .video-card h3 {
+            font-size: 22px;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .video-card p {
+            color: #888;
+            font-size: 14px;
+            line-height: 1.5;
+            max-width: 500px;
+        }
+
+        /* =========================
+            FOTOGRAFIA
+        ========================== */
+        .editorial {
+            margin-bottom: 120px;
+        }
+
+        .editorial:last-child {
+            margin-bottom: 0;
+        }
+
+        .editorial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid #222;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .editorial-header h3 {
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        .editorial-header span {
+            font-size: 11px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .editorial-desc {
+            color: #888;
+            font-size: 15px;
+            line-height: 1.5;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        /* =========================
+            PHOTO GRID
+        ========================== */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .photo-container {
+            width: 100%;
+            overflow: hidden;
+            background: #111;
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .photo-container:hover img {
+            transform: scale(1.02);
+        }
+
+        /* =========================
+            CONTACT
+        ========================== */
+        .contact {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact h2 {
+            font-size: clamp(50px, 9vw, 140px);
+            font-weight: 400;
+            letter-spacing: -6px;
+            line-height: 0.9;
+            max-width: 1000px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 100px;
+        }
+
+        .contact-link {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #777;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #fff;
+        }
+
+        /* =========================
+            FOOTER
+        ========================== */
+        footer {
+            padding: 25px 5vw;
+            border-top: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            color: #555;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* =========================
+            MOBILE
+        ========================== */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 9px;
+            }
+
+            .hero {
+                padding: 130px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 17vw;
+                letter-spacing: -4px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+                margin-top: 40px;
+            }
+
+            section {
+                padding: 90px 20px;
+            }
+
+            .section-header {
+                display: block;
+                margin-bottom: 50px;
+            }
+
+            .section-number {
+                margin-bottom: 20px;
+                display: block;
+            }
+
+            .section-title {
+                font-size: 55px;
+                letter-spacing: -3px;
+            }
+
+            .section-intro {
+                margin-left: 0;
+            }
+
+            .experience {
+                display: block;
+            }
+
+            .experience-meta {
+                margin-bottom: 25px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .editorial {
+                margin-bottom: 80px;
+            }
+
+            .editorial-header {
+                display: block;
+            }
+
+            .editorial-header span {
+                display: block;
+                margin-top: 8px;
+            }
+
+            .contact h2 {
+                font-size: 17vw;
+                letter-spacing: -4px;
+            }
+
+            footer {
+                padding: 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            HF.
+        </a>
+
+        <nav>
+            <a href="#experiencia">Experiência</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#fotografia">Fotografia</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-small">
+                Cinema & Audiovisual
+            </div>
+
+            <h1>
+                Henrique<br>
+                Fernandez
+            </h1>
+
+            <p class="hero-description">
+                Videomaker e estudante de Cinema e Audiovisual,
+                interessado em direção, fotografia e pós-produção.
+                Desenvolvo projetos para publicidade, entretenimento
+                e narrativas audiovisuais.
+            </p>
+
+            <div class="scroll">
+                ↓ Scroll to explore
+            </div>
+        </section>
+
+        <section id="experiencia">
+
+            <div class="section-header">
+                <span class="section-number">
+                    01 — Experiência
+                </span>
+
+                <h2 class="section-title">
+                    Experiência<br>
+                    profissional
+                </h2>
+            </div>
+
+            <div class="experience">
+                <div class="experience-meta">
+                    01<br>
+                    Falconi
+                </div>
+
+                <div class="experience-content">
+                    <h3>
+                        Estagiário de Videomaker
+                    </h3>
+
+                    <p>
+                        Durante um ano, participei da produção de vídeos
+                        para o LinkedIn da empresa Falconi, auxiliando na montagem
+                        de cenas e equipamentos, dando apoio às gravações
+                        como assistente de câmera e realizando trabalhos
+                        de pós-produção e edição.
+                    </p>
+
+                    <div class="video-grid">
+                        <article class="video-card">
+                            <div class="video-preview">
+                                <a href="https://www.linkedin.com/posts/falconi-oficial_tecnologia-sem-maturidade-de-gest%C3%A3o-%C3%A9-s%C3%B3-activity-7468024368967860224-d8fB"
+                                   target="_blank" rel="noopener noreferrer">
+                                    <div class="play">↗</div>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="video-card">
+                            <div class="video-preview">
+                                <a href="https://www.linkedin.com/posts/falconi-oficial_boletim-da-educa%C3%A7%C3%A3o-forma%C3%A7%C3%A3o-de-lideran%C3%A7as-activity-7460304617105408000-GGEE"
+                                   target="_blank" rel="noopener noreferrer">
+                                    <div class="play">↗</div>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="video-card">
+                            <div class="video-preview">
+                                <a href="https://www.linkedin.com/posts/falconi-oficial_o-momento-em-que-a-estrat%C3%A9gia-encontra-a-activity-7463929267077136384-phC2"
+                                   target="_blank" rel="noopener noreferrer">
+                                    <div class="play">↗</div>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience">
+                <div class="experience-meta">
+                    02<br>
+                    Cinema
+                </div>
+
+                <div class="experience-content">
+                    <h3>
+                        Assistente de Video Assist
+                    </h3>
+
+                    <p>
+                        Experiência como assistente de Video Assist no
+                        longa-metragem ficcional
+                        <em>A Grande Virada (2027)</em>.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="projetos">
+
+            <div class="section-header">
+                <span class="section-number">
+                    02 — Projetos
+                </span>
+
+                <h2 class="section-title">
+                    Cinema &<br>
+                    faculdade
+                </h2>
+            </div>
+
+            <p class="section-intro">
+                Projetos desenvolvidos durante minha formação em
+                Cinema e Audiovisual.
+            </p>
+
+            <div class="video-grid">
+                <article class="video-card">
+                    <div class="video-preview">
+                        <a href="https://youtu.be/MGuc1NfdpoU" target="_blank" rel="noopener noreferrer">
+                            <div class="play">↗</div>
+                        </a>
+                    </div>
+                    <h3>Mais do Mesmo — Pullovers</h3>
+                    <p>Videoclipe produzido para a banda Pullovers.</p>
+                </article>
+
+                <article class="video-card">
+                    <div class="video-preview">
+                        <a href="https://youtu.be/V5pX0hXMnWc" target="_blank" rel="noopener noreferrer">
+                            <div class="play">↗</div>
+                        </a>
+                    </div>
+                    <h3>Jantar a Três</h3>
+                    <p>Curta-metragem desenvolvido para a disciplina de Make-Up FX na Criação e Transformação no Cinema, com foco em efeitos práticos e maquiagem de caracterização.</p>
+                </article>
+
+                <article class="video-card">
+                    <div class="video-preview">
+                        <a href="https://youtu.be/Xv7ruggBJgk" target="_blank" rel="noopener noreferrer">
+                            <div class="play">↗</div>
+                        </a>
+                    </div>
+                    <h3>Boneca de Pano</h3>
+                    <p>Curta-metragem de terror, com exploração do gênero body horror.</p>
+                </article>
+            </div>
+
+        </section>
+
+        <section id="fotografia">
+
+            <div class="section-header">
+                <span class="section-number">
+                    03 — Fotografia
+                </span>
+
+                <h2 class="section-title">
+                    Editoriais<br>
+                    de moda
+                </h2>
+            </div>
+
+            <p class="section-intro">
+                Editoriais de moda produzidos durante minha
+                trajetória acadêmica.
+            </p>
+
+            <div class="editorial">
+                <div class="editorial-header">
+                    <h3>Editorial 01</h3>
+                    <span>Disciplina: Cultura STREET</span>
+                </div>
+                <p class="editorial-desc">Ensaio fotográfico desenvolvido para a disciplina de Cultura STREET, explorando estéticas e identidades visuais urbanas.</p>
+
+                <div class="photo-grid">
+                    <div class="photo-container">
+                        <img src="FOTO N1.jpg" alt="Editorial 01 — Foto 01">
+                    </div>
+                    <div class="photo-container">
+                        <img src="FOTO N2.jpg" alt="Editorial 01 — Foto 02">
+                    </div>
+                    <div class="photo-container">
+                        <img src="FOTO N3.jpg" alt="Editorial 01 — Foto 03">
+                    </div>
+                    <div class="photo-container">
+                        <img src="FOTO N4.jpg" alt="Editorial 01 — Foto 04">
+                    </div>
+                    <div class="photo-container">
+                        <img src="FOTO N5.jpg" alt="Editorial 01 — Foto 05">
+                    </div>
+                    <div class="photo-container">
+                        <img src="FOTO N6.jpg" alt="Editorial 01 — Foto 06">
+                    </div>
+                    <div class="photo-container">
+                        <img src="FOTO N7(1).jpg" alt="Editorial 01 — Foto 07">
+                    </div>
+                </div>
+            </div>
+
+            <div class="editorial">
+                <div class="editorial-header">
+                    <h3>Editorial 02</h3>
+                    <span>Homenagem a Ronaldo Fraga</span>
+                </div>
+                <p class="editorial-desc">Ensaio baseado no trabalho do designer Ronaldo Fraga, produzido para a disciplina de Construção Visual da Cena a partir da Direção de Arte e Fotografia.</p>
+
+                <div class="photo-grid">
+                    <div class="photo-container">
+                        <img src="Timeline 1 01_00086400.jpg" alt="Editorial 02 — Foto 01">
+                    </div>
+                    <div class="photo-container">
+                        <img src="Timeline 1 01_00086401.jpg" alt="Editorial 02 — Foto 02">
+                    </div>
+                    <div class="photo-container">
+                        <img src="Timeline 1 01_00086402.jpg" alt="Editorial 02 — Foto 03">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="contato" class="contact">
+            <div>
+                <div class="hero-small">
+                    04 — Contato
+                </div>
+
+                <h2>
+                    Vamos<br>
+                    trabalhar<br>
+                    juntos.
+                </h2>
+            </div>
+
+            <div class="contact-info">
+                <a class="contact-link" href="mailto:henriquefernandez2005@gmail.com">Email ↗</a>
+                <a class="contact-link" href="https://instagram.com/henrique.fernandezz" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+                <a class="contact-link" href="https://linkedin.com/in/henrique-fernandez-5ab21926a" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <span>Henrique Fernandez</span>
+        <span>Cinema & Audiovisual</span>
+        <span>© 2026</span>
+    </footer>
+
+</body>
+</html>
+
+```
